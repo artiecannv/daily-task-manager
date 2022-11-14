@@ -1,6 +1,6 @@
 $(function () {
   const timeSlot = $(".time-block");
-  const currentTime = dayjs().format("HH");
+  const currentTime =  dayjs().format("HH");
 
   // Add a listener for click events on the save button.
   $(".saveBtn").on("click", function () {
