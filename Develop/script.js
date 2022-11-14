@@ -9,7 +9,10 @@ $(function () {
  
 
   $('.saveBtn').on('click', function () {
-    
+    //TODO Save to local storage
+
+
+
   });
 
 
@@ -24,6 +27,8 @@ $(function () {
 
 
 
+
+
   
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
@@ -34,8 +39,10 @@ $(function () {
 
   
   // TODO: Add code to display the current date in the header of the page.
-  var now = day.js();
+  var now = dayjs().format("dddd, MMMM D, YYYY");
   var x = document.getElementById("header")
+
+  $('#currentDay').text(now);
 
 
 
