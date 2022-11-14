@@ -1,6 +1,3 @@
-// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
-// the code isn't run until the browser has finished rendering all the elements
-// in the html.
 $(function () {
   const timeSlot = $(".time-block");
   const currentTime = dayjs().format("HH");
@@ -24,14 +21,18 @@ $(function () {
     }
   }
 
-  // TODO: Add code to get any user input that was saved in localStorage and set
-  // the values of the corresponding textarea elements. HINT: How can the id
-  // attribute of each time-block be used to do this?
-  //
+  // Get user input that was saved in localStorage and set the values of the corresponding textarea elements.
+  
 
-  // TODO: Add code to display the current date in the header of the page.
+  for (let index = 0; index < localStorage.length; index++) {
+    let storageKey = localStorage.key(index);
+
+    $('#' + storageKey).children('textarea').val(localStorage.getItem(storageKey));
+  }
+
+  //Display the current date in the header of the page.
   var now = dayjs().format("dddd, MMMM D, YYYY");
   var x = document.getElementById("header");
-  
+
   $("#currentDay").text(now);
 });
